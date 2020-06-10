@@ -16,5 +16,11 @@ namespace UcuzaYemek
 		{
 			InitializeComponent();
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			FoodData fd = new FoodData();
+			Console.WriteLine(fd.Markets[0].Products[0].Price);
+		}
 	}
 }
