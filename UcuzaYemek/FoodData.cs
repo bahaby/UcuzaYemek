@@ -33,13 +33,36 @@ namespace UcuzaYemek
 			"Un",
 			"Yoğurt"
 		};
-		private List<Market> markets;
+
+		private List<String> foodNames = new List<string>
+		{
+			"Izgara sebze",
+			"Fırında tavuk but",
+			"Kumru",
+			"Tavuklu şiş mantısı",
+			"Füme somonlu kabak ruloları",
+			"Kaşkarikas",
+			"Bamya kızartması"
+		};
+
 		public FoodData()
 		{
-			generateMarkets();
+			GenerateMarkets();
+			GenerateFoods();
 		}
 
-		public void generateMarkets()
+		private List<Market> markets;
+		public List<Market> Markets
+		{
+			get { return markets; }
+		}
+		private List<Food> foods;
+		public List<Food> Foods
+		{
+			get { return foods; }
+		}
+
+		public void GenerateMarkets()
 		{
 			var rand = new Random();
 			markets = new List<Market>();
@@ -54,10 +77,15 @@ namespace UcuzaYemek
 			}
 		}
 
-		public List<Market> Markets
+		public void GenerateFoods()
 		{
-			get { return markets; }
+			foods = new List<Food>();
+			foreach (var foodName in foodNames)
+			{
+				foods.Add(new Food(productNames.OrderBy(arg => Guid.NewGuid()).Take(5).ToList(), foodName));
+			}
 		}
+		
 
 	}
 }

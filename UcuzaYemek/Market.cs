@@ -15,6 +15,5 @@ namespace UcuzaYemek
 			this.Products = products;
 			this.Name = name;
 		}
-
 	}
 }

@@ -12,6 +12,7 @@ namespace UcuzaYemek
 {
 	public partial class MainForm : Form
 	{
+		FoodData fd = new FoodData();
 		public MainForm()
 		{
 			InitializeComponent();
@@ -19,8 +20,7 @@ namespace UcuzaYemek
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			FoodData fd = new FoodData();
-			Console.WriteLine(fd.Markets[0].Products[0].Price);
+			Console.WriteLine(fd.Foods[0].Products[0]);
 		}
 	}
 }
