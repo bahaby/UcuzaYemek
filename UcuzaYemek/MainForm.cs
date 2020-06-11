@@ -7,20 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UcuzaYemek.Widgets;
 
 namespace UcuzaYemek
 {
 	public partial class MainForm : Form
 	{
-		FoodData fd = new FoodData();
+		private FoodData foodData = new FoodData();
 		public MainForm()
 		{
 			InitializeComponent();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void MainForm_Load(object sender, EventArgs e)
 		{
-			Console.WriteLine(fd.Foods[0].Products[0]);
+			Point position = new Point(0, 0);
+			foreach (var food in foodData.Foods)
+			{
+				FoodItem foodItem = new FoodItem(food);
+				foodItem.Location = position;
+				position.Y += 125;
+				panelFoodList.Controls.Add(foodItem);
+			}
+			Console.WriteLine(panelFoodList.Controls.Count);
 		}
 	}
 }
