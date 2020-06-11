@@ -9,13 +9,15 @@ namespace UcuzaYemek
 	public class Product
 	{
 		public String ProductName { get; private set; }
+		public int Quantity { get; private set; }
 		public String MarketName { get; private set; }
 		public double Price { get; private set; }
-		public Product(String productName, double price, String marketName)
+		public Product(String productName, double price, int quantity, String marketName)
 		{
 			this.ProductName = productName;
 			this.Price = price;
 			this.MarketName = marketName;
+			this.Quantity = quantity;
 		}
 		
 	}

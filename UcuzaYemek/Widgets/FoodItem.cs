@@ -13,11 +13,12 @@ namespace UcuzaYemek.Widgets
 	public partial class FoodItem : UserControl
 	{
 		public Food Food { get; private set; }
-		public FoodItem(Food food)
+		private Panel panel;
+		public FoodItem(Food food, Panel panel)
 		{
 			InitializeComponent();
 			this.Food = food;
-
+			this.panel = panel;
 		}
 
 		private void FoodItem_Load(object sender, EventArgs e)
@@ -29,7 +30,8 @@ namespace UcuzaYemek.Widgets
 
 		private void FoodItem_MouseClick(object sender, MouseEventArgs e)
 		{
-			Console.WriteLine("Clicked");
+			panel.Controls.Clear();
+			panel.Controls.Add(new FoodDetail(Food));
 		}
 	}
 }

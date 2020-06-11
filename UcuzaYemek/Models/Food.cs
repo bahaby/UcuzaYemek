@@ -50,7 +50,7 @@ namespace UcuzaYemek
 				Double total = 0;
 				foreach (var product in GetProduct)
 				{
-					total += product.Price;
+					total += (product.Price * product.Quantity);
 				}
 				return total;
 			}

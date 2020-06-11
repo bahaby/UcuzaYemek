@@ -49,14 +49,14 @@
 			// 
 			this.panelFoodDetail.Location = new System.Drawing.Point(418, 12);
 			this.panelFoodDetail.Name = "panelFoodDetail";
-			this.panelFoodDetail.Size = new System.Drawing.Size(400, 634);
+			this.panelFoodDetail.Size = new System.Drawing.Size(376, 634);
 			this.panelFoodDetail.TabIndex = 0;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(830, 658);
+			this.ClientSize = new System.Drawing.Size(806, 658);
 			this.Controls.Add(this.panelFoodDetail);
 			this.Controls.Add(this.panelFoodList);
 			this.Name = "MainForm";

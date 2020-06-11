@@ -58,9 +58,10 @@ namespace UcuzaYemek
 			foreach (var marketName in marketNames)
 			{
 				List<Product> tempProducts = new List<Product>();
+				Random rd = new Random();
 				foreach (var productName in productNames)
 				{
-					tempProducts.Add(new Product(productName, Math.Round(rand.NextDouble() * 10, 2) + 5, marketName));
+					tempProducts.Add(new Product(productName, Math.Round(rand.NextDouble() * 10, 2) + 5, rd.Next(3) + 1, marketName));
 				}
 				markets.Add(new Market(marketName, tempProducts));
 			}
@@ -68,7 +69,7 @@ namespace UcuzaYemek
 
 		public void GenerateFoods()
 		{
-			foods = new List<Food>
+			List<Food> tempFoods = new List<Food>
 			{
 				new Food(productNames.OrderBy(arg => Guid.NewGuid()).Take(5).ToList(), "Bademli Şehriyeli Pirinç Pilavi", Properties.Resources.bademli_sehriyeli_pirinc_pilavi, this),
 				new Food(productNames.OrderBy(arg => Guid.NewGuid()).Take(5).ToList(), "Bütün Tavuk", Properties.Resources.butun_tavuk, this),
@@ -80,6 +81,7 @@ namespace UcuzaYemek
 				new Food(productNames.OrderBy(arg => Guid.NewGuid()).Take(5).ToList(), "Yayla Çorbası", Properties.Resources.yayla_corbasi, this),
 				new Food(productNames.OrderBy(arg => Guid.NewGuid()).Take(5).ToList(), "Zeytin Sezimotu Salatası", Properties.Resources.zeytin_sezimotu_salatasi, this),
 			};
+			foods = tempFoods.OrderBy(o => o.TotalPrice).ToList();
 		}
 		
 

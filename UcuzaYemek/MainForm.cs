@@ -24,7 +24,7 @@ namespace UcuzaYemek
 			Point position = new Point(0, 0);
 			foreach (var food in foodData.Foods)
 			{
-				FoodItem foodItem = new FoodItem(food);
+				FoodItem foodItem = new FoodItem(food, panelFoodDetail);
 				foodItem.Location = position;
 				position.Y += 125;
 				panelFoodList.Controls.Add(foodItem);

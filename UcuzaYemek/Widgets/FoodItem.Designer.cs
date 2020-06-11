@@ -59,12 +59,12 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Controls.Add(this.lblPrice);
 			this.Controls.Add(this.lblName);
 			this.Margin = new System.Windows.Forms.Padding(0);
 			this.Name = "FoodItem";
-			this.Size = new System.Drawing.Size(380, 116);
+			this.Size = new System.Drawing.Size(370, 114);
 			this.Load += new System.EventHandler(this.FoodItem_Load);
 			this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FoodItem_MouseClick);
 			this.ResumeLayout(false);
